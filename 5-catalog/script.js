@@ -43,12 +43,14 @@ function getFiltered() {
 
 function render() {
   const items = getFiltered();
+  const cardsToRender = [];
   items.forEach((p) => {
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `<h3>${p.name}</h3><p class="cat">${p.category}</p><p class="price">$${p.price}</p>`;
-    grid.appendChild(card);
+    cardsToRender.push(card);
   });
+  grid.replaceChildren(...cardsToRender);
   countEl.textContent = products.length;
 }
 
