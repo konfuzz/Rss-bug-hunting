@@ -47,7 +47,16 @@ function updateCounter() {
 }
 
 function render() {
-  const visible = getVisibleTasks();
+  const visible = getVisibleTasks().filter(t => {
+    switch (currentFilter) {
+      case 'active':
+        return !t.done;
+      case 'done':
+        return t.done;
+      default:
+        return true;
+    }
+  });
   const listItems = []
   for (let i = 0; i < visible.length; i++) {
     const task = visible[i];
