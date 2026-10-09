@@ -16,6 +16,8 @@ const resetBtn = document.getElementById("reset");
 const grid = document.getElementById("grid");
 const countEl = document.getElementById("count");
 
+render();
+
 function getFiltered() {
   let result = products;
   const search = searchInput.value;
