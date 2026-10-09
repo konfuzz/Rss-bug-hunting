@@ -53,7 +53,7 @@ function render() {
     cardsToRender.push(card);
   });
   grid.replaceChildren(...cardsToRender);
-  countEl.textContent = products.length;
+  countEl.textContent = items.length;
 }
 
 searchInput.addEventListener("input", render);
